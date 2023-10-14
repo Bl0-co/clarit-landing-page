@@ -7,10 +7,10 @@ import { GoVerified } from 'react-icons/go';
 import { useRef } from 'react';
 import { IoLogoLinkedin } from 'react-icons/io5';
 
-const BRUNO_LINKEDIN = '#';
-const RAFAEL_LINKEDIN = '#';
-const GABRIEL_LINKEDIN = '#';
-const DANIELLE_LINKEDIN = '#';
+const BRUNO_LINKEDIN = 'https://www.linkedin.com/in/godinhobruno/';
+const RAFAEL_LINKEDIN = 'https://www.linkedin.com/in/rafael-carvalho0/';
+const GABRIEL_LINKEDIN = 'https://www.linkedin.com/in/gblaender/';
+const DANIELLE_LINKEDIN = 'https://www.linkedin.com/in/danielledacruzmatos/';
 
 export default function LandingPage() {
     const formRef = useRef<HTMLFormElement>(null);
