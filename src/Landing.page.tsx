@@ -14,6 +14,7 @@ const DANIELLE_LINKEDIN = '#';
 
 export default function LandingPage() {
     const formRef = useRef<HTMLFormElement>(null);
+    const nameRef = useRef<HTMLInputElement>(null);
     function submitForm(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -40,7 +41,10 @@ export default function LandingPage() {
                         <h1>You make it.
                             We provide the tools.</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi dicta, illum fugit sapiente nobis minus quam deserunt. Iusto, reiciendis. At reprehenderit perferendis veniam, distinctio libero cumque? Minima, iste et?</p>
-                        <button onClick={() => formRef?.current?.scrollIntoView({ behavior: "smooth" })}>Get in touch</button>
+                        <button onClick={() => {
+                            formRef?.current?.scrollIntoView({ behavior: "smooth" });
+                            nameRef?.current?.focus();
+                        }}>Get in touch</button>
                     </BriefingLeft>
                     <BriefingRight>
                         <img src="/connect-illustration.svg" alt="" />
@@ -227,7 +231,7 @@ export default function LandingPage() {
                             <img className="logo" src="clarit-logo-2.png" alt="" />
                             <h1>CLARIT</h1>
                         </SCLogo>
-                        <input maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
+                        <input ref={nameRef} maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
                         <input maxLength={200} required id='company' name='company' type="text" placeholder='Company' />
                         <input maxLength={200} id='email' name='email' required type="email" placeholder='Email' />
                         <textarea maxLength={2000} id='comment' name='comment' autoComplete='comment' required placeholder='Comment'></textarea>
@@ -802,7 +806,7 @@ const PageContainer = styled.div`
 `;
 
 const Briefing = styled.div`
-    margin-top: 100px;
+    margin-top: 140px;
     display: flex;
     width: 80%;
     justify-content: center;
