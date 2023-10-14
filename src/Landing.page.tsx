@@ -6,6 +6,9 @@ import { BsBox } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { useRef } from 'react';
 import { IoLogoLinkedin } from 'react-icons/io5';
+import emailJs from '@emailjs/browser';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const BRUNO_LINKEDIN = 'https://www.linkedin.com/in/godinhobruno/';
 const RAFAEL_LINKEDIN = 'https://www.linkedin.com/in/rafael-carvalho0/';
@@ -15,22 +18,46 @@ const DANIELLE_LINKEDIN = 'https://www.linkedin.com/in/danielledacruzmatos/';
 export default function LandingPage() {
     const formRef = useRef<HTMLFormElement>(null);
     const nameRef = useRef<HTMLInputElement>(null);
+    const [sendingEmail, setSendingEmail] = useState(false);
     function submitForm(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
-        console.log(data);
-        /*
-         format of data:
-         {
-              name: 'string',
-              company: 'string',
-              email: 'string',
-              comment: 'string',
+         const templateParams = {
+            from_name: data.name,
+            message: data.comment,
+            email: data.email,
+            from_company: data.company,
+
          }
-        */
-        
-        formRef?.current?.reset();
+         setSendingEmail(true);
+         emailJs.send(import.meta.env.VITE_EMAIL_SERVICE_ID, 
+            import.meta.env.VITE_EMAIL_SERVICE_TEMPLATE_ID, 
+            templateParams, import.meta.env.VITE_EMAIL_SERVICE_API_KEY).then((result) => {
+            console.log(result.text);
+            formRef?.current?.reset();
+            setSendingEmail(false);
+            toast.success('Email sent successfully!',{
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                theme: "colored",
+               
+            });
+        }, (error) => {
+            toast.error('Error when sending email!',{
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                theme: "colored",
+               
+            });
+            setSendingEmail(false);
+        });
     }
     return (
         <PageContainer>
@@ -81,7 +108,7 @@ export default function LandingPage() {
                     </ProblemExplanation>
                 </ProblemContainer>
                 <SolutionContainer>
-                    <h1>Why choose <strong>CLARIT?</strong></h1>
+                    <h1>Why choose <strong>CLARIT <span style={{color:Colors.mainGreen}}>?</span></strong></h1>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum enim laborum assumenda ut itaque quo. Ratione aut necessitatibus nihil eveniet cum asperiores, accusamus, dignissimos ipsum repellendus molestiae quasi omnis reiciendis.
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis tempore, labore deleniti corporis eaque vitae assumenda sed laborum id, laudantium ex fugiat repudiandae? Fugit quae quaerat ipsa incidunt omnis. Non!
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, nesciunt sunt. Voluptatum odio eum aut saepe voluptatibus vel aspernatur laudantium, sequi quae, pariatur corporis impedit in expedita officiis laborum voluptates.
@@ -153,7 +180,7 @@ export default function LandingPage() {
                         </p>
                     </ForCompaniesExplanation>
                 </ForFunds>
-                <ForProjects>
+                <ForProjects style={{background:`linear-gradient(180deg,  white 0%, rgba(255, 255, 255, 0) 100%),${Colors.mainGrayLowOpacity}`}}>
 
                     <ForCompaniesExplanation>
                         <h1>For suppliers</h1>
@@ -225,17 +252,17 @@ export default function LandingPage() {
                 </ParnersContainer>
                 <ContactForm onSubmit={submitForm} ref={formRef}>
                     <img className='back' src="/form-back.svg" alt="" />
-
+                        <img className="ilus" src="/email.svg" alt="" />
                     <Fields>
                         <SCLogo>
                             <img className="logo" src="clarit-logo-2.png" alt="" />
                             <h1>CLARIT</h1>
                         </SCLogo>
-                        <input ref={nameRef} maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
-                        <input maxLength={200} required id='company' name='company' type="text" placeholder='Company' />
-                        <input maxLength={200} id='email' name='email' required type="email" placeholder='Email' />
-                        <textarea maxLength={2000} id='comment' name='comment' autoComplete='comment' required placeholder='Comment'></textarea>
-                        <button>Send</button>
+                        <input  disabled={sendingEmail} ref={nameRef} maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
+                        <input  disabled={sendingEmail} maxLength={200} required id='company' name='company' type="text" placeholder='Company' />
+                        <input  disabled={sendingEmail} maxLength={200} id='email' name='email' required type="email" placeholder='Email' />
+                        <textarea  disabled={sendingEmail} maxLength={2000} id='comment' name='comment' autoComplete='comment' required placeholder='Comment'></textarea>
+                        <button disabled={sendingEmail}>Send</button>
                     </Fields>
                 </ContactForm>
             </PageContent>
@@ -252,6 +279,9 @@ const Fields = styled.div`
     gap: 20px;
     width: 100%;
     height: 100%;
+    padding-right: 70px;
+    /* margin-right: 26%; */
+
     input{
         height: 40px;
         padding:5px;
@@ -270,6 +300,10 @@ const Fields = styled.div`
         &:focus{
             outline: none;
         }
+
+        &:disabled{
+            opacity: 0.5;
+        }
     }
     
 
@@ -284,52 +318,61 @@ const Fields = styled.div`
         &:hover{
             opacity: 0.8;
         }
+        &:disabled{
+            opacity: 0.2;
+        }
     }
 `;
 
 const SCLogo = styled.div`
-width: 100%;
-max-width: 400px;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-
-
-.logo{
-    width: 80px;
+    width: 100%;
     max-width: 400px;
-}
-h1{
-    font-family: Plus Jakarta Sans;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34.307px;
-    line-height: normal;
-    color: white;
-    margin-left: 20px;
-}
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .logo{
+        width: 80px;
+        max-width: 400px;
+    }
+    h1{
+        font-family: Plus Jakarta Sans;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 34.307px;
+        line-height: normal;
+        color: white;
+        margin-left: 20px;
+    }
 `;
 
 const ContactForm = styled.form`
-padding: 20px;
-width: 100%;
+    padding: 20px;
+    width: 100%;
 
-margin-top: 50px;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-position: relative;
-
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+.ilus{
+    position: absolute;
+    left: 20%;
+    bottom: 1px;
+    
+    width: 35%;
+}
 .back{
-position: absolute;
-top: -45px;
-left: 0;
-width: 100%;
-height: 130%;
-object-fit: cover;
-object-position: 30% 0%;
-z-index: -1;
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    object-position: 30% 0%;
+    z-index: -1;
 }
 `;
 
@@ -582,7 +625,7 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-gap: 20px;
+gap: 40px;
 width: 100%;
 padding-top: 40px;
 `;
@@ -603,7 +646,7 @@ const SolutionContainer = styled.div`
         font-family: Plus Jakarta Sans;
         font-style: normal;
         font-weight: 400;
-        font-size: 40px;
+        font-size: 43px;
         line-height: 50px;
         color: #000000;
 
@@ -616,8 +659,8 @@ const SolutionContainer = styled.div`
         font-family: Plus Jakarta Sans;
         font-style: normal;
         font-weight: 400;
-        font-size: 14.75px;
-        line-height: 19.2px;
+        font-size: 16px;
+        line-height: 21px;
         color: #000000;
         width: 50%;
         text-align: center;
@@ -636,10 +679,10 @@ const ProblemExplanation = styled.div`
         width: 90%;
         text-align: left;
         font-family: Plus Jakarta Sans;
-        font-size: 35px;
+        font-size: 40px;
         font-style: normal;
         font-weight: 400;
-        line-height: 42px;
+        line-height: 48px;
 
         strong{
             font-weight: 700;
@@ -650,10 +693,10 @@ const ProblemExplanation = styled.div`
         color: #FFF;
         width: 90%;
         font-family: Plus Jakarta Sans;
-        font-size: 14.75px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 19.2px; /* 130.169% */
+        line-height: 21px; /* 130.169% */
     }
 `;
 
@@ -699,8 +742,8 @@ const Item = styled.li`
         font-family: Plus Jakarta Sans;
         font-style: normal;
         font-weight: 400;
-        font-size: 13px;
-        line-height: 15px;
+        font-size: 15px;
+        line-height: 17px;
         color: #000000;
     }
 `;
@@ -718,9 +761,6 @@ const Items = styled.ul`
 
 const RoundedBriefingFooter = styled.div`
     width: 100%;
-
-
-
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -756,31 +796,31 @@ const BriefingLeft = styled.div`
         font-family: Plus Jakarta Sans;
         font-style: normal;
         font-weight: 700;
-        font-size: 40px;
-        width: 350px;
+        font-size: 50px;
+        width: 390px;
         line-height: 50px;
         color: #000000;
     }
     p{
         color: #000;
         font-family: Plus Jakarta Sans;
-        font-size: 14.75px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
-        line-height: 19.2px; /* 130.169% */
+        line-height: 22px; /* 130.169% */
         width: 380px;
     }
 
     button{
         color: white;
         width: 118px;
-        height: 40px;
+        height: 50px;
         flex-shrink: 0;
         border-radius: 5px;
         border: 1px solid transparent;
         background: ${Colors.mainGreen};
         font-family: Plus Jakarta Sans;
-        font-size: 16px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 400;
         line-height: 22.4px; /* 140% */

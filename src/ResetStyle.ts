@@ -88,6 +88,7 @@ html, body, span, applet, object, iframe,
         font-family: Plus Jakarta Sans;
         transition: all 200ms;
         box-sizing: border-box;
+
     }
 `;
 
