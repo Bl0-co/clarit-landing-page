@@ -177,7 +177,7 @@ export default function LandingPage() {
                                 <li>Led the establishment of 2 Financial Institutions.</li>
                                 <li>Head of digital products for 4 years in the financial and insurance sectors.</li>
                             </ul>
-                            <a href={BRUNO_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={BRUNO_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/CtJGy3hvZEXfIhgZTrbqu7EReJ6htq0v25QbVgZTeCdPZdfsSgruzjdhejtcyo4yXoSRr01y_qzt2yE4Pzg-H6J7zfTMOK3zDA7M=s0" alt="" />
@@ -191,7 +191,7 @@ export default function LandingPage() {
                                 <li>Audit Certified Professional for Public Companies and Financial Institutions (CNAI/CVM/BACEN) - Conselho Federal de Contabilidade - Brazil</li>
                                 <li>Certified on IFRS e ISA - ACCA</li>
                             </ul>
-                            <a href={RAFAEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={RAFAEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/c39Lkh_okKMvwkbqWp7hbROmnYvE0zPFR8jExRrU11r6bRlhwz8AiPX71F5Qu2bmKohFjRxH5iSD9ypRMNdi-PtWp-KeULmm7n8=w418" alt="" />
@@ -207,7 +207,7 @@ export default function LandingPage() {
                                 <li>Certified Corporate Compliance and Ethics Professional - CCEP-I</li>
                                 <li>Ph.D. Law and Technology by Universidade de Brasília</li>
                             </ul>
-                            <a href={GABRIEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={GABRIEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/oCqIsXyR3wnRh03pIpuFrI863zHltiiEAippgeBZkab6iL6-Kv7roOCGBK3FJsn1okIAAbLLoRDifwCW_Oog6IJjeOyw2gDUmA=w418" alt="" />
@@ -219,7 +219,7 @@ export default function LandingPage() {
                                 <li>Led the legal team of a health tech spin-off of one of the largest health providers in the Americas</li>
                                 <li>Seasoned legal experience at major projects in companies such as Bradesco, and Sulamerica</li>
                             </ul>
-                            <a href={DANIELLE_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={DANIELLE_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
                         </Partner>
                     </PartnersList>
                 </ParnersContainer>
