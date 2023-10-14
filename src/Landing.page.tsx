@@ -33,7 +33,7 @@ export default function LandingPage() {
          setSendingEmail(true);
          emailJs.send(import.meta.env.VITE_EMAIL_SERVICE_ID, 
             import.meta.env.VITE_EMAIL_SERVICE_TEMPLATE_ID, 
-            templateParams, import.meta.env.VITE_EMAIL_SERVICE_API_KEY).then((result) => {
+            templateParams, import.meta.env.VITE_EMAIL_SERVICE_PUBLIC_KEY).then((result) => {
             console.log(result.text);
             formRef?.current?.reset();
             setSendingEmail(false);
