@@ -46,7 +46,7 @@ export default function LandingPage() {
                 theme: "colored",
                
             });
-        }, (_) => {
+        }, (error) => {
             toast.error('Error when sending email!',{
                 position: "top-left",
                 autoClose: 5000,
@@ -56,6 +56,7 @@ export default function LandingPage() {
                 theme: "colored",
                
             });
+            console.log(error);
             setSendingEmail(false);
         });
     }
