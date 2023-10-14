@@ -66,9 +66,8 @@ export default function LandingPage() {
             <PageContent>
                 <Briefing>
                     <BriefingLeft>
-                        <h1>You make it.
-                            We provide the tools.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi dicta, illum fugit sapiente nobis minus quam deserunt. Iusto, reiciendis. At reprehenderit perferendis veniam, distinctio libero cumque? Minima, iste et?</p>
+                        <h1>Improve governance in the third sector.</h1>
+                        <p>Meet your goals. Wheather a Supporter, a Fund or a Project keep a track on financial allocation in a integrated and transparent manner.</p>
                         <button onClick={() => {
                             formRef?.current?.scrollIntoView({ behavior: "smooth" });
                             nameRef?.current?.focus();
@@ -84,16 +83,16 @@ export default function LandingPage() {
                     <Items>
                         <Item>
                             <GrShieldSecurity />
-                            <p>Security for something</p>
+                            <p>Security for Suporters</p>
                         </Item>
 
                         <Item>
                             <BsBox />
-                            <p>Benefits for something</p>
+                            <p>Benefits for everyone</p>
                         </Item>
                         <Item>
                             <GoVerified />
-                            <p>Accountability for something</p>
+                            <p>Accountability for resource allocation</p>
                         </Item>
                     </Items>
                 </RoundedBriefingFooter>
@@ -102,17 +101,15 @@ export default function LandingPage() {
                     <ProblemExplanation>
                         <div className='box'></div>
                         <div className='box2'></div>
-                        <h1>Com a comunidade certa ao seu redor, <strong> grandes coisas acontecem</strong></h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quo id odit dolores at consectetur! Velit, ducimus distinctio, doloribus maiores hic reiciendis totam iusto nisi minus, optio placeat. Maiores, dignissimos!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ab distinctio tempora suscipit earum facilis error saepe tempore quae voluptate. Nisi nesciunt delectus cupiditate animi! Consequuntur enim amet nisi. Magnam.
-                        </p>
+                        <h1>Governance, transparency and <strong> accountability</strong></h1>
+                        <p>Make the world a better place with CLARIT </p>
                     </ProblemExplanation>
                 </ProblemContainer>
                 <SolutionContainer>
                     <h1>Why choose <strong>CLARIT <span style={{color:Colors.mainGreen}}>?</span></strong></h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum enim laborum assumenda ut itaque quo. Ratione aut necessitatibus nihil eveniet cum asperiores, accusamus, dignissimos ipsum repellendus molestiae quasi omnis reiciendis.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis tempore, labore deleniti corporis eaque vitae assumenda sed laborum id, laudantium ex fugiat repudiandae? Fugit quae quaerat ipsa incidunt omnis. Non!
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, nesciunt sunt. Voluptatum odio eum aut saepe voluptatibus vel aspernatur laudantium, sequi quae, pariatur corporis impedit in expedita officiis laborum voluptates.
+                    <p>CLARIT provides an solution for resource allocation workflow with legal compliant tools, an functional bank account and on ramp crypto operations
+                        for Funds, Projects and Supporters.</p>
+                        <p>CLARIT is a fully integrated solution to improve governance in the third sector.
                     </p>
                 </SolutionContainer>
                 <BenefitsContainer>
@@ -121,44 +118,28 @@ export default function LandingPage() {
                             <img src="/analysis.svg" alt="" />
                         </BenefitItemImageContainer>
                         <h1>Compliance</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, voluptatum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum commodi perferendis odio beatae nobis asperiores rem, magnam illum harum enim dignissimos excepturi architecto consequuntur dicta aspernatur, facilis, animi quia ratione!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit commodi accusamus quod quo aliquid, id beatae soluta nisi expedita totam? Corporis veritatis cupiditate accusantium! Ipsam esse doloremque totam iure quasi.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, adipisci. Animi, vitae consequatur unde amet vero asperiores voluptatum, ex cum blanditiis officiis velit aliquam ratione illo iste consequuntur est commodi?
-                        </p>
+                        <p>Natively due dilligence process for Funds, Projects and Suppliers onboarding</p>
                     </BenefitItemContainer>
                     <BenefitItemContainer>
                         <BenefitItemImageContainer>
                             <img src="/overview.svg" alt="" />
                         </BenefitItemImageContainer>
-                        <h1>Overview your money</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, voluptatum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum commodi perferendis odio beatae nobis asperiores rem, magnam illum harum enim dignissimos excepturi architecto consequuntur dicta aspernatur, facilis, animi quia ratione!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit commodi accusamus quod quo aliquid, id beatae soluta nisi expedita totam? Corporis veritatis cupiditate accusantium! Ipsam esse doloremque totam iure quasi.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, adipisci. Animi, vitae consequatur unde amet vero asperiores voluptatum, ex cum blanditiis officiis velit aliquam ratione illo iste consequuntur est commodi?
-                        </p>
+                        <h1>Follow the money</h1>
+                        <p>Keep on tracking the money from the ingress until its final goal</p>
                     </BenefitItemContainer>
                     <BenefitItemContainer>
                         <BenefitItemImageContainer>
                             <img src="/inside-transfers.svg" alt="" />
                         </BenefitItemImageContainer>
-                        <h1>Transfer from to something</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, voluptatum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum commodi perferendis odio beatae nobis asperiores rem, magnam illum harum enim dignissimos excepturi architecto consequuntur dicta aspernatur, facilis, animi quia ratione!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit commodi accusamus quod quo aliquid, id beatae soluta nisi expedita totam? Corporis veritatis cupiditate accusantium! Ipsam esse doloremque totam iure quasi.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, adipisci. Animi, vitae consequatur unde amet vero asperiores voluptatum, ex cum blanditiis officiis velit aliquam ratione illo iste consequuntur est commodi?
-                        </p>
+                        <h1>Integrated to your website</h1>
+                        <p>Available for fiat currency and crypto assets</p>
                     </BenefitItemContainer>
                     <BenefitItemContainer>
                         <BenefitItemImageContainer>
                             <img className='drex' src="/DREX.png" alt="" />
                         </BenefitItemImageContainer>
-                        <h1>DREX</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, voluptatum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum commodi perferendis odio beatae nobis asperiores rem, magnam illum harum enim dignissimos excepturi architecto consequuntur dicta aspernatur, facilis, animi quia ratione!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit commodi accusamus quod quo aliquid, id beatae soluta nisi expedita totam? Corporis veritatis cupiditate accusantium! Ipsam esse doloremque totam iure quasi.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, adipisci. Animi, vitae consequatur unde amet vero asperiores voluptatum, ex cum blanditiis officiis velit aliquam ratione illo iste consequuntur est commodi?
-                        </p>
+                        <h1>Brazilian CBDC</h1>
+                        <p>Designed to support on ramp crypto solutions, and natively integrated with Drex - the Brazilian CBDC</p>
                     </BenefitItemContainer>
                 </BenefitsContainer>
 
@@ -166,9 +147,9 @@ export default function LandingPage() {
                     {/* <img className='curve-gray-up' src="/vector.svg" alt="" /> */}
                     <ForCompaniesExplanation>
                         <h1>For projects</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quo id odit dolores at consectetur! Velit, ducimus distinctio, doloribus maiores hic reiciendis totam iusto nisi minus, optio placeat. Maiores, dignissimos!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ab distinctio tempora suscipit earum facilis error saepe tempore quae voluptate. Nisi nesciunt delectus cupiditate animi! Consequuntur enim amet nisi. Magnam.
-                        </p>
+                        <p>Get the money you need to make your project happen. <br/>
+                        Get a transparent and accountable way to show your supporters how you are using their money.<br/>
+                        by using CLARIT you will be able to get more supporters and more money for your project.</p>
                     </ForCompaniesExplanation>
                     <img src="/projects.svg" alt="" />
                 </ForProjects>
@@ -176,17 +157,18 @@ export default function LandingPage() {
                     <img src="/funds.svg" alt="" />
                     <ForCompaniesExplanation>
                         <h1>For funds</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quo id odit dolores at consectetur! Velit, ducimus distinctio, doloribus maiores hic reiciendis totam iusto nisi minus, optio placeat. Maiores, dignissimos!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ab distinctio tempora suscipit earum facilis error saepe tempore quae voluptate. Nisi nesciunt delectus cupiditate animi! Consequuntur enim amet nisi. Magnam.
-                        </p>
+                        <p>Select the best project to fund<br/>
+                        Track the money you are investing<br/>
+                        Show your supporters how you are using their money<br/>
+                        Get more supporters and more money for your fund</p>
                     </ForCompaniesExplanation>
                 </ForFunds>
                 <ForProjects style={{background:`linear-gradient(180deg,  white 0%, rgba(255, 255, 255, 0) 100%),${Colors.mainGrayLowOpacity}`}}>
 
                     <ForCompaniesExplanation>
-                        <h1>For suppliers</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quo id odit dolores at consectetur! Velit, ducimus distinctio, doloribus maiores hic reiciendis totam iusto nisi minus, optio placeat. Maiores, dignissimos!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At, ab distinctio tempora suscipit earum facilis error saepe tempore quae voluptate. Nisi nesciunt delectus cupiditate animi! Consequuntur enim amet nisi. Magnam.
+                        <h1>For Supporters</h1>
+                        <p>Get the best projects to support<br/>
+                        Track the money you are investing<br/>
                         </p>
                     </ForCompaniesExplanation>
                     <img src="/workers.svg" alt="" />
@@ -197,7 +179,7 @@ export default function LandingPage() {
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/f0vaw3cX0ZW4YE99j2UMnFKDS7Hq0_eeJb_xHxbIVFV8pO-gO7JUMlWz5PwcgyZuT1_nR0aKauPjQqvWXuK6tdBR4gd_3JPNWWs=s0" alt="" />
                             <h1>Bruno Godinho</h1>
-                            <h2>CEO</h2>
+                            <h2>Co-Founder</h2>
                             <p>With a career spanning over 13 years in the financial market and stints at renowned companies such as SulAmérica, Banco Original, and CSU Digital, taking on leadership roles in strategic areas of digital products and operations.</p>
                             <ul>
                                 <li>Graduated in Engineering from the University of São Paulo (USP).</li>
@@ -210,8 +192,8 @@ export default function LandingPage() {
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/CtJGy3hvZEXfIhgZTrbqu7EReJ6htq0v25QbVgZTeCdPZdfsSgruzjdhejtcyo4yXoSRr01y_qzt2yE4Pzg-H6J7zfTMOK3zDA7M=s0" alt="" />
                             <h1>RAFAEL CARVALHO</h1>
-                            <h2>Blockchain Development</h2>
-                            <p>Web3 developer with expertise on Blockchain networks, Ethereum, BSC, BSV, Polygon, Harmony-One, Hedera, Solana.</p>
+                            <h2>Co-Founder</h2>
+                            <p>Web3 developer with expertise on Blockchain networks</p>
                             <ul>
                                 <li>Certified Finance and Blockchain Professional - Blockchain Council </li>
                                 <li>Certified Ethereum Expert - Blockchain Council</li>
@@ -224,7 +206,7 @@ export default function LandingPage() {
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/c39Lkh_okKMvwkbqWp7hbROmnYvE0zPFR8jExRrU11r6bRlhwz8AiPX71F5Qu2bmKohFjRxH5iSD9ypRMNdi-PtWp-KeULmm7n8=w418" alt="" />
                             <h1>GABRIEL LAENDER</h1>
-                            <h2>Product Design | Compliance</h2>
+                            <h2>Co-Founder</h2>
                             <p>Product Designer with international expertise on crypto projects and compliance.</p>
                             <ul>
                                 <li>Product-Owner at several companies in Bay Area</li>
@@ -240,7 +222,7 @@ export default function LandingPage() {
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/oCqIsXyR3wnRh03pIpuFrI863zHltiiEAippgeBZkab6iL6-Kv7roOCGBK3FJsn1okIAAbLLoRDifwCW_Oog6IJjeOyw2gDUmA=w418" alt="" />
                             <h1>DANIELLE MATOS</h1>
-                            <h2>Legal Counsel</h2>
+                            <h2>Co-Founder</h2>
                             <p>With over 10 years of experience in corporate affairs management, her career is marked by significant contributions to some of Brazil's leading publicly listed companies.</p>
                             <ul>
                                 <li>Certified ESG Compliance Professional by LEC</li>
