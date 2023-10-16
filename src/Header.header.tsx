@@ -24,6 +24,8 @@ justify-content: flex-start;
 align-items: center;
 background-color: rgba(255,255,255,0.6);
 z-index: 7;
+
+
 `;
 
 const Logo = styled.div`
@@ -46,5 +48,6 @@ const Logo = styled.div`
     color: ${Colors.darkGreen};
     font-size: 34.307px;
   }
+  cursor: pointer;
 `;
 

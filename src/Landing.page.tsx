@@ -23,42 +23,42 @@ export default function LandingPage() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
-         const templateParams = {
+        const templateParams = {
             from_name: data.name,
             message: data.comment,
             email: data.email,
             from_company: data.company,
 
-         }
-         setSendingEmail(true);
-         emailJs.send(import.meta.env.VITE_EMAIL_SERVICE_ID, 
-            import.meta.env.VITE_EMAIL_SERVICE_TEMPLATE_ID, 
+        }
+        setSendingEmail(true);
+        emailJs.send(import.meta.env.VITE_EMAIL_SERVICE_ID,
+            import.meta.env.VITE_EMAIL_SERVICE_TEMPLATE_ID,
             templateParams, import.meta.env.VITE_EMAIL_SERVICE_PUBLIC_KEY).then((result) => {
-            console.log(result.text);
-            formRef?.current?.reset();
-            setSendingEmail(false);
-            toast.success('Email sent successfully!',{
-                position: "top-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                theme: "colored",
-               
+                console.log(result.text);
+                formRef?.current?.reset();
+                setSendingEmail(false);
+                toast.success('Email sent successfully!', {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "colored",
+
+                });
+            }, (error) => {
+                toast.error('Error when sending email!', {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    theme: "colored",
+
+                });
+                console.log(error);
+                setSendingEmail(false);
             });
-        }, (error) => {
-            toast.error('Error when sending email!',{
-                position: "top-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                theme: "colored",
-               
-            });
-            console.log(error);
-            setSendingEmail(false);
-        });
     }
     return (
         <PageContainer>
@@ -106,10 +106,10 @@ export default function LandingPage() {
                     </ProblemExplanation>
                 </ProblemContainer>
                 <SolutionContainer>
-                    <h1>Why choose <strong>CLARIT <span style={{color:Colors.mainGreen}}>?</span></strong></h1>
+                    <h1>Why choose <strong>CLARIT <span style={{ color: Colors.mainGreen }}>?</span></strong></h1>
                     <p>CLARIT provides an solution for resource allocation workflow with legal compliant tools, an functional bank account and on ramp crypto operations
                         for Funds, Projects and Supporters.</p>
-                        <p>CLARIT is a fully integrated solution to improve governance in the third sector.
+                    <p>CLARIT is a fully integrated solution to improve governance in the third sector.
                     </p>
                 </SolutionContainer>
                 <BenefitsContainer>
@@ -147,9 +147,9 @@ export default function LandingPage() {
                     {/* <img className='curve-gray-up' src="/vector.svg" alt="" /> */}
                     <ForCompaniesExplanation>
                         <h1>For projects</h1>
-                        <p>Get the money you need to make your project happen. <br/>
-                        Get a transparent and accountable way to show your supporters how you are using their money.<br/>
-                        by using CLARIT you will be able to get more supporters and more money for your project.</p>
+                        <p>Get the money you need to make your project happen. <br />
+                            Get a transparent and accountable way to show your supporters how you are using their money.<br />
+                            by using CLARIT you will be able to get more supporters and more money for your project.</p>
                     </ForCompaniesExplanation>
                     <img src="/projects.svg" alt="" />
                 </ForProjects>
@@ -157,18 +157,18 @@ export default function LandingPage() {
                     <img src="/funds.svg" alt="" />
                     <ForCompaniesExplanation>
                         <h1>For funds</h1>
-                        <p>Select the best project to fund<br/>
-                        Track the money you are investing<br/>
-                        Show your supporters how you are using their money<br/>
-                        Get more supporters and more money for your fund</p>
+                        <p>Select the best project to fund<br />
+                            Track the money you are investing<br />
+                            Show your supporters how you are using their money<br />
+                            Get more supporters and more money for your fund</p>
                     </ForCompaniesExplanation>
                 </ForFunds>
-                <ForProjects style={{background:`linear-gradient(180deg,  white 0%, rgba(255, 255, 255, 0) 100%),${Colors.mainGrayLowOpacity}`}}>
+                <ForProjects style={{ background: `linear-gradient(180deg,  white 0%, rgba(255, 255, 255, 0) 100%),${Colors.mainGrayLowOpacity}` }}>
 
                     <ForCompaniesExplanation>
                         <h1>For Supporters</h1>
-                        <p>Get the best projects to support<br/>
-                        Track the money you are investing<br/>
+                        <p>Get the best projects to support<br />
+                            Track the money you are investing<br />
                         </p>
                     </ForCompaniesExplanation>
                     <img src="/workers.svg" alt="" />
@@ -187,7 +187,7 @@ export default function LandingPage() {
                                 <li>Led the establishment of 2 Financial Institutions.</li>
                                 <li>Head of digital products for 4 years in the financial and insurance sectors.</li>
                             </ul>
-                            <a target='_blank' href={BRUNO_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={BRUNO_LINKEDIN}><IoLogoLinkedin />LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/CtJGy3hvZEXfIhgZTrbqu7EReJ6htq0v25QbVgZTeCdPZdfsSgruzjdhejtcyo4yXoSRr01y_qzt2yE4Pzg-H6J7zfTMOK3zDA7M=s0" alt="" />
@@ -201,7 +201,7 @@ export default function LandingPage() {
                                 <li>Audit Certified Professional for Public Companies and Financial Institutions (CNAI/CVM/BACEN) - Conselho Federal de Contabilidade - Brazil</li>
                                 <li>Certified on IFRS e ISA - ACCA</li>
                             </ul>
-                            <a target='_blank' href={RAFAEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={RAFAEL_LINKEDIN}><IoLogoLinkedin />LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/c39Lkh_okKMvwkbqWp7hbROmnYvE0zPFR8jExRrU11r6bRlhwz8AiPX71F5Qu2bmKohFjRxH5iSD9ypRMNdi-PtWp-KeULmm7n8=w418" alt="" />
@@ -217,7 +217,7 @@ export default function LandingPage() {
                                 <li>Certified Corporate Compliance and Ethics Professional - CCEP-I</li>
                                 <li>Ph.D. Law and Technology by Universidade de Brasília</li>
                             </ul>
-                            <a target='_blank' href={GABRIEL_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={GABRIEL_LINKEDIN}><IoLogoLinkedin />LinkedIn</a>
                         </Partner>
                         <Partner>
                             <img src="https://lh3.googleusercontent.com/oCqIsXyR3wnRh03pIpuFrI863zHltiiEAippgeBZkab6iL6-Kv7roOCGBK3FJsn1okIAAbLLoRDifwCW_Oog6IJjeOyw2gDUmA=w418" alt="" />
@@ -229,22 +229,22 @@ export default function LandingPage() {
                                 <li>Led the legal team of a health tech spin-off of one of the largest health providers in the Americas</li>
                                 <li>Seasoned legal experience at major projects in companies such as Bradesco, and Sulamerica</li>
                             </ul>
-                            <a target='_blank' href={DANIELLE_LINKEDIN}><IoLogoLinkedin/>LinkedIn</a>
+                            <a target='_blank' href={DANIELLE_LINKEDIN}><IoLogoLinkedin />LinkedIn</a>
                         </Partner>
                     </PartnersList>
                 </ParnersContainer>
                 <ContactForm onSubmit={submitForm} ref={formRef}>
                     <img className='back' src="/form-back.svg" alt="" />
-                        <img className="ilus" src="/email.svg" alt="" />
+                    <img className="ilus" src="/email.svg" alt="" />
                     <Fields>
                         <SCLogo>
                             <img className="logo" src="clarit-logo-2.png" alt="" />
                             <h1>CLARIT</h1>
                         </SCLogo>
-                        <input  disabled={sendingEmail} ref={nameRef} maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
-                        <input  disabled={sendingEmail} maxLength={200} required id='company' name='company' type="text" placeholder='Company' />
-                        <input  disabled={sendingEmail} maxLength={200} id='email' name='email' required type="email" placeholder='Email' />
-                        <textarea  disabled={sendingEmail} maxLength={2000} id='comment' name='comment' autoComplete='comment' required placeholder='Comment'></textarea>
+                        <input disabled={sendingEmail} ref={nameRef} maxLength={200} id='name' name='name' required type="text" placeholder='Name' />
+                        <input disabled={sendingEmail} maxLength={200} required id='company' name='company' type="text" placeholder='Company' />
+                        <input disabled={sendingEmail} maxLength={200} id='email' name='email' required type="email" placeholder='Email' />
+                        <textarea disabled={sendingEmail} maxLength={2000} id='comment' name='comment' autoComplete='comment' required placeholder='Comment'></textarea>
                         <button disabled={sendingEmail}>Send</button>
                     </Fields>
                 </ContactForm>
@@ -305,8 +305,17 @@ const Fields = styled.div`
             opacity: 0.2;
         }
     }
-`;
 
+    @media (max-width: 880px) {
+   justify-content: center;
+    align-items: center;
+    padding: 0;
+    input, textarea,button{
+        max-width: 90%;
+    }
+
+}
+`;
 const SCLogo = styled.div`
     width: 100%;
     max-width: 400px;
@@ -329,8 +338,8 @@ const SCLogo = styled.div`
         color: white;
         margin-left: 20px;
     }
-`;
 
+`;
 const ContactForm = styled.form`
     padding: 20px;
     width: 100%;
@@ -346,6 +355,7 @@ const ContactForm = styled.form`
     bottom: 1px;
     
     width: 35%;
+
 }
 .back{
     position: absolute;
@@ -357,8 +367,23 @@ const ContactForm = styled.form`
     object-position: 30% 0%;
     z-index: -1;
 }
-`;
 
+@media (max-width: 1020px) {
+   justify-content: center;
+    .ilus{
+        display: none;
+    }
+}
+
+@media (max-width: 880px) {
+   justify-content: center;
+    align-items: center;
+    .back{
+        display: none;
+    }
+    background-color: ${Colors.mainGreen};
+}
+`;
 const Partner = styled.li`
 width: 300px;
 background-color: white;
@@ -460,8 +485,18 @@ a{
        opacity: 0.8;
     }
 }
-`;
 
+
+@media (max-width: 600px) {
+    width: 100%;
+    img{
+        width: 100%;
+        max-width: 100%;
+        max-height: inherit;
+    }
+
+    }
+`;
 const PartnersList = styled.ul`
 display: flex;
 align-items: center;
@@ -471,7 +506,6 @@ width: 100%;
 padding-top: 40px;
 flex-wrap: wrap;
 `;
-
 const ParnersContainer = styled.div`
 display: flex;
 width: 100%;
@@ -500,11 +534,36 @@ display: flex;
     height: 400px;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
     padding-left: 100px;
     padding-right: 100px;
 
     img{
         width: 391px;
+    }
+
+    @media (max-width: 1000px) {
+        img{
+        position: absolute;
+        z-index: 1;
+        opacity: 0.2;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+       }
+       padding-left: 20px;
+       padding-right: 20px;
+       justify-content: center;
+       width: 100%;
+       h1{
+        font-weight: 500;
+       
+       }
+       p{
+       
+       }
     }
 `;
 const ForCompaniesExplanation = styled.div`
@@ -536,6 +595,15 @@ const ForCompaniesExplanation = styled.div`
         font-weight: 400;
         line-height: 19.2px; /* 130.169% */
     }
+
+    @media (max-width: 1000px) {
+       width: 100%;
+       
+      
+       h1{
+        font-weight: 500;
+       }
+    }
 `;
 const ForProjects = styled.div`
     display: flex;
@@ -564,6 +632,23 @@ const ForProjects = styled.div`
     img{
         width: 391px;
     }
+
+    @media (max-width: 1000px) {
+       img{
+        position: absolute;
+        z-index: 1;
+        opacity: 0.2;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+       }
+       height: 300px;
+       padding-left: 20px;
+       padding-right: 20px;
+       justify-content: center;
+    }
 `;
 const BenefitItemImageContainer = styled.div`
 width: 100%;
@@ -576,7 +661,6 @@ img{
     max-height: 200px;
 }
 `;
-
 const BenefitItemContainer = styled.li`
 display: flex;
 flex-direction: column;
@@ -600,9 +684,13 @@ p{
     color: #000000;
     text-align: center;
 }
+
+@media (max-width: 600px) {
+       width: 100%;
+       border-top: 1px solid ${Colors.mainGrayLowOpacity};
+       padding: 10px;
+    }
 `;
-
-
 const BenefitsContainer = styled.ul`
 display: flex;
 flex-wrap: wrap;
@@ -612,8 +700,6 @@ gap: 40px;
 width: 100%;
 padding-top: 40px;
 `;
-
-
 const SolutionContainer = styled.div`
  display: flex;
     align-items: center;
@@ -636,6 +722,11 @@ const SolutionContainer = styled.div`
         strong {
             font-weight: 700;
         }
+
+        @media (max-width: 400px) {
+            font-size: 30px;
+            line-height: 38px;
+        }   
     }
 
     p{
@@ -648,8 +739,19 @@ const SolutionContainer = styled.div`
         width: 50%;
         text-align: center;
     }
-`;
 
+    @media (max-width: 900px) {
+        height: 300px;
+        h1{
+            width: 90%;
+            text-align: center;
+        }
+        p{
+            width: 90%;
+            text-align: center;
+        }
+    }
+`;
 const ProblemExplanation = styled.div`
     width: 50%;
     display: flex;
@@ -670,6 +772,11 @@ const ProblemExplanation = styled.div`
         strong{
             font-weight: 700;
         }
+
+        @media (max-width: 400px) {
+            font-size: 30px;
+            line-height: 38px;
+        }   
     }
 
     p{
@@ -681,8 +788,24 @@ const ProblemExplanation = styled.div`
         font-weight: 400;
         line-height: 21px; /* 130.169% */
     }
-`;
 
+    @media (max-width: 900px) {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        h1,p{
+            width: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    
+`;
 const ProblemContainer = styled.div`
     display: flex;
     align-items: center;
@@ -711,8 +834,29 @@ const ProblemContainer = styled.div`
     img{
         width: 391px;
     }
-`;
 
+    @media (max-width: 900px) {
+       img{
+        position: absolute;
+        z-index: 1;
+        opacity: 0.2;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+       }
+       height: 300px;
+
+       .box,.box2{
+        top: -180px;
+       }
+
+       justify-content: center;
+    }
+
+
+`;
 const Item = styled.li`
     height: 100px;
     display: flex;
@@ -729,8 +873,9 @@ const Item = styled.li`
         line-height: 17px;
         color: #000000;
     }
-`;
 
+    
+`;
 const Items = styled.ul`
     display: flex;
     justify-content: center;
@@ -740,8 +885,6 @@ const Items = styled.ul`
     position: absolute;
     top: 70px;
 `;
-
-
 const RoundedBriefingFooter = styled.div`
     width: 100%;
     display: flex;
@@ -761,7 +904,6 @@ const RoundedBriefingFooter = styled.div`
         bottom :-100px;
     }
 `;
-
 const PageContent = styled.main`
     padding-top: 80px;
     width: 100%;
@@ -769,7 +911,6 @@ const PageContent = styled.main`
     flex-direction: column;
     align-items: center;
 `;
-
 const BriefingLeft = styled.div`
     width: 50%;
     display: flex;
@@ -810,15 +951,19 @@ const BriefingLeft = styled.div`
     }
 
 `;
-
 const BriefingRight = styled.div`
-    width: 50%;
-    
+    width: 100%;
+    @media (max-width: 900px) {
+        position: absolute;
+        z-index: -1;
+        opacity: 0.3;
+        left: 0;
+        top: -100px;
+    }
     img{
         width: 100%;
     }
 `;
-
 const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -827,7 +972,6 @@ const PageContainer = styled.div`
     overflow: hidden;
     
 `;
-
 const Briefing = styled.div`
     margin-top: 140px;
     display: flex;

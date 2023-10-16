@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import LandingPage from './Landing.page'
 import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+export default function App() {
   return (
     <>
     <ToastContainer/>
@@ -11,5 +11,3 @@ function App() {
     </>
   )
 }
-
-export default App
