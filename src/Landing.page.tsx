@@ -689,6 +689,10 @@ p{
        width: 100%;
        border-top: 1px solid ${Colors.mainGrayLowOpacity};
        padding: 10px;
+
+       h1{
+        white-space: nowrap;
+       }
     }
 `;
 const BenefitsContainer = styled.ul`
@@ -845,6 +849,7 @@ const ProblemContainer = styled.div`
         transform: translateY(-50%);
         width: 100%;
         height: 100%;
+        object-fit: cover;
        }
        height: 300px;
 
@@ -865,6 +870,10 @@ const Item = styled.li`
     gap: 10px;
     font-size: 20px;
 
+    @media (max-width: 400px) {
+      height: auto;
+    }
+
     p{
         font-family: Plus Jakarta Sans;
         font-style: normal;
@@ -873,7 +882,11 @@ const Item = styled.li`
         line-height: 17px;
         color: #000000;
     }
-
+    @media (max-width: 400px) {
+       p{
+        text-align: center;
+       }
+    }
     
 `;
 const Items = styled.ul`
@@ -884,6 +897,12 @@ const Items = styled.ul`
     width: 80%;
     position: absolute;
     top: 70px;
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 10px;
+      top: 40px;
+    }
 `;
 const RoundedBriefingFooter = styled.div`
     width: 100%;
@@ -902,6 +921,14 @@ const RoundedBriefingFooter = styled.div`
         transform: translateX(-50%);
         
         bottom :-100px;
+    }
+
+    @media (max-width: 400px) {
+      height: 200px;
+        margin-top: 30px;
+      img{
+        bottom: -200px;
+      }
     }
 `;
 const PageContent = styled.main`
@@ -953,6 +980,9 @@ const BriefingLeft = styled.div`
     @media (max-width: 800px) {
         justify-content: center;
         width: 100%;
+        h1,p{
+            width: 100%;
+        }
     }
 
 `;
@@ -984,4 +1014,10 @@ const Briefing = styled.div`
     justify-content: center;
     gap: 100px;
     position: relative;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `;
