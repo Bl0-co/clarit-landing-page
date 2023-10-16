@@ -815,6 +815,7 @@ const ProblemExplanation = styled.div`
 `;
 const ProblemContainer = styled.div`
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
     width: 100%;
