@@ -1022,6 +1022,10 @@ const Briefing = styled.div`
     position: relative;
     max-width: 1100px;
 
+    @media (max-width: 400px) {
+       margin-top: 80px;
+    }
+    
     @media (max-width: 800px) {
         width: 100%;
         padding-left: 20px;
