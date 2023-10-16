@@ -606,6 +606,10 @@ const ForCompaniesExplanation = styled.div`
        h1{
         font-weight: 500;
        }
+
+       .right{
+        text-align: left;
+       }
     }
 `;
 const ForProjects = styled.div`
@@ -646,6 +650,7 @@ const ForProjects = styled.div`
         transform: translateY(-50%);
         width: 100%;
         height: 100%;
+        object-fit: cover;
        }
        height: 300px;
        padding-left: 20px;
