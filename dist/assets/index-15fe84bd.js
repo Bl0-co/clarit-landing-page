@@ -751,6 +751,11 @@ padding-top: 40px;
         line-height: 22.4px; /* 140% */
     }
 
+    @media (max-width: 800px) {
+        justify-content: center;
+        width: 100%;
+    }
+
 `,rm=U.div`
     width: 100%;
     @media (max-width: 900px) {

@@ -950,6 +950,11 @@ const BriefingLeft = styled.div`
         line-height: 22.4px; /* 140% */
     }
 
+    @media (max-width: 800px) {
+        justify-content: center;
+        width: 100%;
+    }
+
 `;
 const BriefingRight = styled.div`
     width: 100%;
