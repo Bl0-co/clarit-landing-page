@@ -156,8 +156,8 @@ export default function LandingPage() {
                 <ForFunds>
                     <img src="/funds.svg" alt="" />
                     <ForCompaniesExplanation>
-                        <h1>For funds</h1>
-                        <p>Select the best project to fund<br />
+                        <h1 className='right'>For funds</h1>
+                        <p className='right'>Select the best project to fund<br />
                             Track the money you are investing<br />
                             Show your supporters how you are using their money<br />
                             Get more supporters and more money for your fund</p>
@@ -571,6 +571,9 @@ const ForCompaniesExplanation = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    .right{
+        text-align: right;
+    }
     h1{
         color: black;
         width: 90%;
@@ -988,15 +991,18 @@ const BriefingLeft = styled.div`
 `;
 const BriefingRight = styled.div`
     width: 100%;
+    max-width: 600px;
     @media (max-width: 900px) {
         position: absolute;
         z-index: -1;
         opacity: 0.3;
         left: 0;
         top: -100px;
+        max-width: 100%;
     }
     img{
         width: 100%;
+       
     }
 `;
 const PageContainer = styled.div`
@@ -1011,13 +1017,15 @@ const Briefing = styled.div`
     margin-top: 140px;
     display: flex;
     width: 80%;
-    justify-content: center;
+    justify-content: space-between;
     gap: 100px;
     position: relative;
+    max-width: 1100px;
 
     @media (max-width: 800px) {
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
+        justify-content: center;
     }
 `;
